@@ -53,7 +53,7 @@ pytest --cov=src --cov-report=html --cov-report=term
 
 **MCP Server Pattern**: The architecture follows a clear separation between the MCP protocol layer and analysis logic:
 
-1. **`src/server.py`** - MCP protocol handler
+1. **`src/server.py`** - MCP protocol handler (338 lines)
    - Defines 6 Tool schemas with short parameter names (e.g., `path`, `inc`, `exc`)
    - Maps short params to long params via `map_params()` function
    - Routes tool calls to appropriate analyzers
@@ -63,6 +63,7 @@ pytest --cov=src --cov-report=html --cov-report=term
    - Each tool is a standalone async function accepting a dict of long-form params
    - Tools return JSON results wrapped in TextContent
    - No shared state between tools
+   - Tools: `architecture_analyzer.py`, `pattern_detector.py`, `dependency_mapper.py`, `coverage_analyzer.py`, `convention_validator.py`, `context_pack_generator.py`
 
 3. **`src/utils/`** - Reusable analysis utilities
    - **`ast_parser.py`**: Parses Python files using `ast` module, extracts classes/functions/imports

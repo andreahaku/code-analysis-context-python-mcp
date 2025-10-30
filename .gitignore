@@ -145,3 +145,5 @@ cython_debug/
 
 # Project specific
 .code-analysis-cache/
+.claude/
+.llm-memory/
