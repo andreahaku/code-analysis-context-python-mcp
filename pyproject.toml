@@ -5,7 +5,7 @@ description = "MCP server for deep Python codebase analysis, pattern detection, 
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-    {name = "Andrea Salvatore", email = "noreply@anthropic.com"}
+    {name = "Andrea Salvatore", email = "andreahaku@gmail.com"}
 ]
 license = {text = "MIT"}
 keywords = [
