@@ -422,6 +422,65 @@ Andrea Salvatore (@andreahaku) with Claude (Anthropic)
 - [llm-memory-mcp](https://github.com/andreahaku/llm_memory_mcp) - Persistent memory for LLM tools
 - [code-analysis-context-mcp](https://github.com/andreahaku/code-analysis-context-mcp) - TypeScript/JavaScript version
 
+## 💬 Example Usage with Claude Desktop
+
+Once configured as an MCP server, you can use natural language prompts:
+
+### Analyzing a Data Science Project
+
+**Prompt:** "Analyze the architecture of my pandas project and show me the complexity metrics"
+
+This will invoke the `arch` tool with appropriate parameters to:
+- Detect pandas framework usage
+- Calculate complexity for all Python files
+- Show module structure and class hierarchies
+- Identify high-complexity functions needing refactoring
+
+**Prompt:** "Find all DataFrame operations in my project and check if they follow best practices"
+
+This will use the `patterns` tool to:
+- Detect DataFrame chaining, groupby, merge operations
+- Compare against pandas best practices
+- Suggest optimizations (e.g., vectorization instead of loops)
+
+### Finding Code Issues
+
+**Prompt:** "Check my project for circular dependencies and show me the dependency graph"
+
+Uses the `deps` tool to:
+- Build import graph using NetworkX
+- Detect any circular import cycles
+- Calculate coupling/cohesion metrics
+- Generate Mermaid diagram of dependencies
+
+**Prompt:** "Which files in my project have no test coverage and are most critical to test?"
+
+The `coverage` tool will:
+- Parse coverage.xml or .coverage file
+- Prioritize gaps based on complexity and file location
+- Generate pytest test scaffolds for critical files
+- Show untested functions with complexity scores
+
+### Code Quality
+
+**Prompt:** "Validate my project follows PEP 8 conventions and show naming violations"
+
+The `conventions` tool will:
+- Check snake_case, PascalCase, UPPER_SNAKE_CASE naming
+- Validate import grouping and ordering
+- Check for missing docstrings and type hints
+- Report consistency score by category
+
+### AI-Assisted Development
+
+**Prompt:** "Generate a context pack for adding data validation to my pandas DataFrame processing pipeline"
+
+The `context` tool will:
+- Extract keywords ("data validation", "pandas", "DataFrame")
+- Score files by relevance to the task
+- Select most relevant files within token budget
+- Format as markdown with code snippets and suggestions
+
 ## 🧪 Testing
 
 Test all tools on this project itself:
