@@ -58,7 +58,7 @@ pip install -e ".[dev]"
 
 ### As an MCP Server
 
-Add to your MCP client configuration (e.g., Claude Desktop):
+Add to your MCP client configuration:
 
 ```json
 {
@@ -422,9 +422,9 @@ Andrea Salvatore (@andreahaku) with Claude (Anthropic)
 - [llm-memory-mcp](https://github.com/andreahaku/llm_memory_mcp) - Persistent memory for LLM tools
 - [code-analysis-context-mcp](https://github.com/andreahaku/code-analysis-context-mcp) - TypeScript/JavaScript version
 
-## 💬 Example Usage with Claude Desktop
+## 💬 Example Usage
 
-Once configured as an MCP server, you can use natural language prompts:
+Once configured as an MCP server in your LLM client, you can use natural language prompts:
 
 ### Analyzing a Data Science Project
 
