@@ -1,0 +1,90 @@
+[project]
+name = "code-analysis-context-python-mcp"
+version = "0.1.0"
+description = "MCP server for deep Python codebase analysis, pattern detection, and AI-optimized context generation for data analysis projects"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Andrea Salvatore", email = "noreply@anthropic.com"}
+]
+license = {text = "MIT"}
+keywords = [
+    "mcp",
+    "code-analysis",
+    "context-engineering",
+    "architecture",
+    "python",
+    "data-analysis",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "ast",
+    "dependency-graph",
+    "pattern-detection",
+    "ai-context"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "mcp>=0.9.0",
+    "astroid>=3.0.0",
+    "coverage>=7.0.0",
+    "networkx>=3.0",
+    "radon>=6.0.0",
+    "pylint>=3.0.0",
+    "gitpython>=3.1.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+code-analysis-python-mcp = "src.server:main"
+
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src --cov-report=html --cov-report=term"

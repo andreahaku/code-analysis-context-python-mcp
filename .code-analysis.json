@@ -1,0 +1,81 @@
+{
+  "project": {
+    "name": "MyDataProject",
+    "type": "pandas",
+    "description": "Data analysis project with pandas and scikit-learn"
+  },
+  "analysis": {
+    "includeGlobs": [
+      "src/**/*.py",
+      "notebooks/**/*.ipynb",
+      "scripts/**/*.py"
+    ],
+    "excludeGlobs": [
+      "**/test_*.py",
+      "**/*_test.py",
+      "**/__pycache__/**",
+      "**/venv/**",
+      "**/.venv/**",
+      "**/env/**",
+      "**/.env/**",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/*.egg-info/**"
+    ]
+  },
+  "conventions": {
+    "naming": {
+      "functions": "snake_case",
+      "classes": "PascalCase",
+      "constants": "UPPER_SNAKE_CASE",
+      "modules": "snake_case",
+      "private_prefix": "_"
+    },
+    "imports": {
+      "order": ["stdlib", "third_party", "local"],
+      "grouping": true,
+      "style": "absolute"
+    },
+    "style": {
+      "line_length": 100,
+      "quotes": "double",
+      "indentation": 4,
+      "trailing_comma": true
+    },
+    "docstrings": {
+      "required": true,
+      "style": "google",
+      "modules": true,
+      "classes": true,
+      "functions": true
+    },
+    "type_hints": {
+      "required": true,
+      "functions": true,
+      "methods": true,
+      "variables": false
+    }
+  },
+  "coverage": {
+    "threshold": {
+      "lines": 80,
+      "functions": 80,
+      "branches": 75,
+      "statements": 80
+    },
+    "exclude_patterns": [
+      "**/test_*.py",
+      "**/__init__.py"
+    ]
+  },
+  "complexity": {
+    "max_complexity": 10,
+    "warn_complexity": 7
+  },
+  "frameworks": {
+    "detected": ["pandas", "numpy", "sklearn"],
+    "primary": "pandas"
+  }
+}

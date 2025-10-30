@@ -1,0 +1,27 @@
+# Core MCP dependencies
+mcp>=0.9.0
+
+# AST and code analysis
+astroid>=3.0.0
+radon>=6.0.0
+
+# Coverage analysis
+coverage>=7.0.0
+
+# Graph analysis
+networkx>=3.0
+
+# Code quality
+pylint>=3.0.0
+
+# Git integration
+gitpython>=3.1.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Data validation
+pydantic>=2.0.0
+
+# Development dependencies (optional)
+# Install with: pip install -r requirements.txt -r requirements-dev.txt

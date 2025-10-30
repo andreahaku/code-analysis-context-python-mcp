@@ -1,0 +1,31 @@
+# Auto-learning data
+.llm-memory/autolearn-queue.ndjson
+.git/llm-memory-autolearn.tmp
+
+# Ignore common build and cache directories
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Ignore virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+
+# Ignore large data files
+*.csv
+*.parquet
+*.hdf5
+*.h5
